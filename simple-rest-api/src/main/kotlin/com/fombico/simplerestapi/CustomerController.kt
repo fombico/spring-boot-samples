@@ -39,19 +39,19 @@ class CustomerController(val customerRepository: CustomerRepository) {
     }
 
     @DeleteMapping(value = ["/{id}"])
-    fun delete(@PathVariable id: Long): ResponseEntity<Void> {
+    fun delete(@PathVariable id: Long): ResponseEntity<Unit> {
         return customerRepository.findById(id)
                 .map { customer ->
                     customerRepository.deleteById(customer.id)
-                    ResponseEntity.noContent().build<Void>()
+                    ResponseEntity.noContent().build<Unit>()
                 }
                 .orElseThrow { CustomerNotFoundException() }
     }
 
     @RequestMapping(method = [RequestMethod.HEAD], value = ["/{id}"])
-    fun head(@PathVariable id: Long): ResponseEntity<Void> {
+    fun head(@PathVariable id: Long): ResponseEntity<Unit> {
         return customerRepository.findById(id)
-                .map { ResponseEntity.noContent().build<Void>() }
+                .map { ResponseEntity.noContent().build<Unit>() }
                 .orElseThrow { CustomerNotFoundException() }
     }
 
