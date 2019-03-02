@@ -1,0 +1,3 @@
+sendGrid:
+  api:
+    key: "some api key"
