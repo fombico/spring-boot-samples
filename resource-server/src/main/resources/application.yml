@@ -1,0 +1,12 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+ssoServiceUrl: https://pal.login.run.pivotal.io
+security:
+  oauth2:
+    resource:
+      jwk:
+        key-set-uri: https://pal.login.run.pivotal.io/token_keys
