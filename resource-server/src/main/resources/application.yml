@@ -4,7 +4,6 @@ management:
       exposure:
         include: "*"
 
-ssoServiceUrl: https://pal.login.run.pivotal.io
 security:
   oauth2:
     resource:
