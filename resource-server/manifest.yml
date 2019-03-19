@@ -5,7 +5,3 @@ applications:
     buildpacks:
       - https://github.com/cloudfoundry/java-buildpack.git
     random-route: true
-    services:
-      - sso
-    env:
-      GRANT_TYPE: client_credentials
