@@ -19,12 +19,14 @@ class SecuredController {
         return "hello"
     }
 
+    // require 'todo' resource with 'read' permission/scope
     @PreAuthorize("#oauth2.hasScope('todo.read')")
     @GetMapping("/read")
     fun read(): String {
         return "read"
     }
 
+    // require 'todo' resource with 'write' permission/scope
     @PreAuthorize("#oauth2.hasScope('todo.write')")
     @PostMapping("/write")
     fun write(): String {

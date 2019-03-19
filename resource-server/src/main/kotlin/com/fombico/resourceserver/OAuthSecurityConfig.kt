@@ -20,6 +20,7 @@ class OAuthSecurityConfig : WebSecurityConfigurerAdapter() {
     fun resourceServerConfigurerAdapter(): ResourceServerConfigurer {
         return object : ResourceServerConfigurerAdapter() {
             override fun configure(resources: ResourceServerSecurityConfigurer) {
+                // require 'uaa' resource
                 resources.resourceId("uaa")
             }
         }

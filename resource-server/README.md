@@ -1,7 +1,7 @@
 # Spring-Boot PCF SSO Resource Server
 
 A sample resource server, to be deployed onto PCF, that binds to the `Single Sign-on` Service in the PCF Marketplace.
-A JWT is required to hit the endpoints.
+A JWT is required to hit the endpoints. Update the `application.yml` with your `key-set-uri`.
 
 ## To Test no-scopes
 1. Create a Single Sign-On Service called `sso`
