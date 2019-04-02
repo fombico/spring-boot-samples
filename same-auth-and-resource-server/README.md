@@ -41,7 +41,7 @@ A sample project with a combined auth and resource server:
 ## Tests
 
 ### ApiControllerTest
-- tests apis by checking authority and authority
+- tests apis by checking authority and scope
 - `@ComponentScan.Filter` is needed in `@WebMvcTest`, otherwise it won't see `MethodSecurityConfig` (which would result in  all `@PreAuthorize` usage would be ignored in the tests)
 - uses `@WithMockOAuth2` instead of `@WithMockUser` for api tests that check scope (oauth2)
 
