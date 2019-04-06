@@ -47,18 +47,22 @@ public class PersonControllerTest {
     public void addPerson_acceptsJsonRequest() throws Exception {
         mvc.perform(request(HttpMethod.POST, BASE_URL)
                 .content("{\"name\":\"Joe\",\"age\":20}")
-                .contentType(MediaType.APPLICATION_JSON))
+                .contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_XML))
                 .andExpect(status().isOk())
-                .andExpect(content().string("Joe is 20 years old"));
+                .andExpect(xpath("person/@name").string("Joe"))
+                .andExpect(xpath("person/age").number(20.0));
     }
 
     @Test
     public void addPerson_acceptsXmRequest() throws Exception {
         mvc.perform(request(HttpMethod.POST, BASE_URL)
                 .content("<person name=\"Joe\"><age>20</age></person>")
-                .contentType(MediaType.APPLICATION_XML))
+                .contentType(MediaType.APPLICATION_XML)
+                .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(content().string("Joe is 20 years old"));
+                .andExpect(jsonPath("$.name", is("Joe")))
+                .andExpect(jsonPath("$.age", is(20)));
     }
 
     @Test
