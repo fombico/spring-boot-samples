@@ -1,0 +1,5 @@
+ftp:
+  host: test.rebex.net
+  port: 21
+  username: demo
+  password: password

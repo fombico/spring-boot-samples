@@ -1,0 +1,5 @@
+ftp:
+  host: localhost
+  port: 1337
+  username: fred
+  password: secret
