@@ -71,8 +71,7 @@ Two apps are present:
 1. Repeat steps 1~3 in the RabbitMQ Run section to make a POST and verify the output.
 1. See that a queue, named `sharedChannel` is automatically created in Kafka
     ```
-    > kafka-topics --zookeeper 127.0.0.1 --list
-    sharedChannel
+    kafka-topics --zookeeper 127.0.0.1 --list
     ```
 
 
