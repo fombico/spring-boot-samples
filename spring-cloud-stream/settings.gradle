@@ -1,0 +1,4 @@
+rootProject.name = "spring-cloud-stream"
+
+include "spring-cloud-stream-input"
+include "spring-cloud-stream-output"
