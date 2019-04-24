@@ -94,3 +94,19 @@ Two apps are present:
     String payload = (String) queue.poll().getPayload();
     assertThat(payload).isEqualTo(expectedPayload);
     ```
+
+### Other
+- Delete channel in kafka:
+    ```
+    kafka-topics --zookeeper 127.0.0.1 --delete --topic sharedChannel
+    ```
+- List services:
+    ```
+    brew services list
+    ```
+- Stop services:
+    ```
+    brew services stop rabbitmq
+    brew services stop kafka
+    brew services stop zookeper
+    ```
