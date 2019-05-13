@@ -1,0 +1,5 @@
+rootProject.name = "ldap-oauth-sample"
+
+include "client"
+include "ldap-auth-server"
+include "orders"

@@ -1,0 +1,20 @@
+server:
+  port: 9000
+
+security:
+  oauth2:
+    resource:
+      jwt:
+        keyValue: |
+          -----BEGIN PUBLIC KEY-----
+          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApegROcomY3mF++T2F9cT
+          TqIGT4/0BInk9YIHjLCRpH8S4wHjunCexeqKvdwbFXdQ+GyEG1ci1tYn0nMsDgrQ
+          8Z+Rlgq9LO7oVNBInCG8DpAKIHaz3qyo3+22viT42DI4tSSTqDUodZR/3kKv84kb
+          vNz5hBMd+NWdfzcUQIXIU5Ned/k1QX/m13L6+t1JqAeHCfwRu2ud0wabnN2jSMLc
+          H3jYcQInxF+mrG1ZGOdnrwjor7+kc5y6MTh8sQH6zpneHSoAObaBhvBM65YY+cVy
+          PeSGmWGromygOo1yvq2YrJRJU3Q3BuhngOti8P3eJyUFJoGvbC7L1nEi0HFGU5bw
+          WQIDAQAB
+          -----END PUBLIC KEY-----
+spring:
+  application:
+    name: "Orders API"

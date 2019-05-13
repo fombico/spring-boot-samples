@@ -1,0 +1,25 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+security:
+  oauth2:
+    client:
+      clientId: b96e1b1d-b805-4bef-b28c-456348cbc361
+      clientSecret: fc8589ba-fab5-45ab-b8e7-79ce3cbc4b73
+      accessTokenUri: http://localhost:8090/authserver/oauth/token
+      userAuthorizationUri: http://localhost:8090/authserver/oauth/authorize
+      use-current-uri: false
+      pre-established-redirect-uri: http://localhost:8080/login
+    resource:
+      userInfoUri: http://localhost:9000/user
+      prefer-token-info: false
+
+proxy:
+  auth:
+    routes:
+      api: oauth2
+spring:
+  application:
+    name: "Web Client"

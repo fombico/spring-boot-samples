@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Orders</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/4.3.1/dist/css/bootstrap.css" type="text/css">
+</head>
+<body>
+<div class="container">
+    <div class="row my-3">
+        <h1>The bookstore - Admin Orders</h1>
+    </div>
+    <div class="row my-3">
+        <a href="/" class="btn btn-primary">Home</a>
+    </div>
+    <div class="row my-3">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title" th:text="${orders}">Order name</h5>
+                <p class="card-text">Order placed a week ago</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+server:
+  port: 8090
+  servlet:
+    context-path: /authserver
+    session:
+      timeout: 2m
+
+# This client uses Authorization Code Grant Flow
+clientApi:
+  id: b96e1b1d-b805-4bef-b28c-456348cbc361
+  secret: fc8589ba-fab5-45ab-b8e7-79ce3cbc4b73
+  redirectUrl: http://localhost:8080/login
+
+security:
+  oauth2:
+    authorization:
+      jwt:
+        key-value: |
+          -----BEGIN RSA PRIVATE KEY-----
+          MIIEowIBAAKCAQEApegROcomY3mF++T2F9cTTqIGT4/0BInk9YIHjLCRpH8S4wHj
+          unCexeqKvdwbFXdQ+GyEG1ci1tYn0nMsDgrQ8Z+Rlgq9LO7oVNBInCG8DpAKIHaz
+          3qyo3+22viT42DI4tSSTqDUodZR/3kKv84kbvNz5hBMd+NWdfzcUQIXIU5Ned/k1
+          QX/m13L6+t1JqAeHCfwRu2ud0wabnN2jSMLcH3jYcQInxF+mrG1ZGOdnrwjor7+k
+          c5y6MTh8sQH6zpneHSoAObaBhvBM65YY+cVyPeSGmWGromygOo1yvq2YrJRJU3Q3
+          BuhngOti8P3eJyUFJoGvbC7L1nEi0HFGU5bwWQIDAQABAoIBAGaD76D1+KKfBNuR
+          rz8r9xIvrBadrPrg+kl5/5A/yr8KhnEfSch6rqE9PF31FAc/oxjedQMv5Kc7zX+N
+          CzviExo6r4s3N438UjOWQEe50Kpu9tL4hkyiA/fau4Di96Ef50qHP3ZA4q9FA34j
+          VvX1Ut5w7P1fkrWfyaJCNpFoGVEKUDSAWrBQlTmYNVWSrkF1Wnc3sZY9v4RzFuXl
+          eb43ZpeTNgDLZHoIQin5HaF8Yaj2py9Ani4bAxSpswVg/NseXrw8FkNt+UiYVl/U
+          nEYCaeBWxuxI5GXdRxAPaisWW9TrE1EPhYsLQC/PSN1TAkflr63G84368MKosuVH
+          tLPXUwECgYEAzikiAq7w9cQExV/CgRDLKwLh/jTsHoTuhD+uBJGCZ6mYOMm5YFIF
+          PS/a//tg0QiWLUivAGDjlyqsSFVfE/V4JjOyNL4GkCi0I9obXv7KTyPU8nylIGjk
+          bqnvTn07sDQ2OYr1AhkdpBnqsVF/CQywuZ9U2ZQBE0hXORVn+FsA58UCgYEAzgOv
+          jbNcB8T1JQgwtT7ppeLG4PctvC5RXoOLDtz40DTHWj37kk+UZIQv/H/6e06Z3+D/
+          XHhRDOBvogF9drO86jcuPv6k8FCr1Pbo5h0tNHtCASDIk2znSkLllkgeA7VQjqT6
+          DqEEclCNO03LtKrw9bwIUDMeQOovbAToKrMF24UCgYBRBWFUZKRWMf8eApBSYOM3
+          uB5Q5UOWiu+iEdS1/umdC83DI6Qy8okUjuYmjAh0nkdG7LW6FFndYuvqUYLYOTRK
+          7y4uBDBYH2cMX/85yjCAAbkCw3Gx1wdPZoGh+x2mFh7pZm77sBsyDu1pWnnueIpL
+          qQ6To9L4XQnKaVs/A6TLcQKBgQDDg+H3FDKSOQ0CkSxQxp1NztQ6Kruf7UFR9nth
+          prsINh6/+TUo3ReS8ZTtCLQ6lBUa0Njo9FLPaqznToy4u8ndanMcW+VDIPyCx7Wu
+          th/xv8ybb3aL234CD0z+fADoOgpy5gVfHtcuel4e2y0pkFXQkRw+qNTcfKR22o1Q
+          AMjdVQKBgFWb+2/upNnL5Dz94RDH+D3s32lg6bXWQT24C4fLrB5A//2xNwyLERPb
+          TPurz1sXYB/zppEUR+PKdQffmderK26zptek5CgrOETvN46Rn3L0YiwZwnLufYST
+          3xMx/nFBZl2ZJ7MC6XY1OTKo9KjY2KVepCug7Z3BU9NEUwe2xP8Z
+          -----END RSA PRIVATE KEY-----
+
+spring:
+  application:
+    name: "Auth Server"
+  ldap:
+    embedded:
+      base-dn: "dc=springframework,dc=org"
+      ldif: "classpath:test-server.ldif"
+      port: 8389
