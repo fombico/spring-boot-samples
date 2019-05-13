@@ -1,5 +1,6 @@
 package com.fombico.ftpsample;
 
+import lombok.AllArgsConstructor;
 import org.apache.commons.net.ftp.FTPFile;
 import org.springframework.integration.ftp.session.DefaultFtpSessionFactory;
 import org.springframework.integration.ftp.session.FtpSession;
@@ -14,13 +15,10 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @RestController
+@AllArgsConstructor
 public class ApiController {
 
     private DefaultFtpSessionFactory ftpSessionFactory;
-
-    public ApiController(DefaultFtpSessionFactory ftpSessionFactory) {
-        this.ftpSessionFactory = ftpSessionFactory;
-    }
 
     @GetMapping("list")
     public FtpListResponse list(@RequestParam String path) throws IOException {

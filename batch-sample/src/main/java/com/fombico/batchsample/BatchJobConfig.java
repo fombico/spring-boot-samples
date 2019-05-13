@@ -1,5 +1,6 @@
 package com.fombico.batchsample;
 
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
@@ -21,6 +22,7 @@ import java.util.stream.Collectors;
 
 @Slf4j
 @EnableBatchProcessing
+@AllArgsConstructor
 @Configuration
 public class BatchJobConfig {
 
@@ -29,12 +31,6 @@ public class BatchJobConfig {
     private final StepBuilderFactory steps;
     private ResultService resultService;
     private final List<Double> numberList = new ArrayList<>();
-
-    public BatchJobConfig(JobBuilderFactory jobs, StepBuilderFactory steps, ResultService resultService) {
-        this.jobs = jobs;
-        this.steps = steps;
-        this.resultService = resultService;
-    }
 
     @Bean
     Job job() {

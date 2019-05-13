@@ -1,5 +1,6 @@
 package com.fombico.sameauthandresourceserver.account;
 
+import lombok.AllArgsConstructor;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -10,15 +11,11 @@ import org.springframework.stereotype.Service;
 import javax.annotation.PostConstruct;
 
 @Service
+@AllArgsConstructor
 public class AccountUserService implements UserDetailsService {
 
     private AccountRepository accountRepository;
     private PasswordEncoder passwordEncoder;
-
-    public AccountUserService(AccountRepository accountRepository, PasswordEncoder passwordEncoder) {
-        this.accountRepository = accountRepository;
-        this.passwordEncoder = passwordEncoder;
-    }
 
     @PostConstruct
     private void insertUsers() {

@@ -1,5 +1,6 @@
 package com.fombico.sameauthandresourceserver.authentication;
 
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -14,14 +15,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @Slf4j
+@AllArgsConstructor
 public class OAuth2Filter extends OncePerRequestFilter {
 
     private static final String BEARER = "Bearer";
     private final ResourceServerTokenServices tokenServices;
-
-    public OAuth2Filter(ResourceServerTokenServices tokenServices) {
-        this.tokenServices = tokenServices;
-    }
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws IOException, ServletException {

@@ -1,6 +1,7 @@
 package com.fombico.sftpsample;
 
 import com.jcraft.jsch.ChannelSftp;
+import lombok.AllArgsConstructor;
 import org.springframework.integration.sftp.session.DefaultSftpSessionFactory;
 import org.springframework.integration.sftp.session.SftpSession;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,13 +15,10 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @RestController
+@AllArgsConstructor
 public class ApiController {
 
     private DefaultSftpSessionFactory sftpSessionFactory;
-
-    public ApiController(DefaultSftpSessionFactory sftpSessionFactory) {
-        this.sftpSessionFactory = sftpSessionFactory;
-    }
 
     @GetMapping("list")
     public SftpListResponse list(@RequestParam String path) throws IOException {

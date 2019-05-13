@@ -1,18 +1,16 @@
 package com.fombico.rabbitmqsample;
 
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Component;
 
 @Slf4j
 @Component
+@AllArgsConstructor
 public class BroadcastMessageProducer {
 
     private final RabbitTemplate rabbitTemplate;
-
-    public BroadcastMessageProducer(RabbitTemplate rabbitTemplate) {
-        this.rabbitTemplate = rabbitTemplate;
-    }
 
     public void sendMessages(String message) {
         log.info("Sending message: {}", message);
